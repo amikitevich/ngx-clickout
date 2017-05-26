@@ -1,6 +1,8 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClickOutDirective } from './click-out.directive';
+
+export * from './click-out.directive';
 
 @NgModule({
   imports: [
@@ -14,9 +16,4 @@ import { ClickOutDirective } from './click-out.directive';
   ]
 })
 export class ClickOutModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: ClickOutModule
-    };
-  }
 }

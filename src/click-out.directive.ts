@@ -10,11 +10,21 @@ import {
   EventEmitter
 } from '@angular/core';
 
-import { Subscription, Observable, BehaviorSubject } from 'rxjs/Rx';
+import { Subscription } from 'rxjs/Subscription';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/fromEvent';
+import 'rxjs/add/observable/merge';
+import 'rxjs/add/observable/timer';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/skipUntil';
+import 'rxjs/add/operator/takeUntil';
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/do';
 
 const ESC_CODE = 27;
 
-export const getEventPath = (event: Event): HTMLElement[] => {
+const getEventPath = (event: Event): HTMLElement[] => {
   if (event['path']) {
     return event['path'];
   }
