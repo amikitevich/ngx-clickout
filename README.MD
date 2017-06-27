@@ -88,6 +88,15 @@ To lint all `*.ts` files:
 $ npm run lint
 ```
 
+# CHANGELOG 
+
+<a name="0.2.1"></a>
+# [0.2.1] (2017-06-27)
+
+
+### Bug Fixes
+* fix exit full screen in safari by esc
+
 ## License
 
 MIT © [Alexey Mikitevich](mailto:alekseymikitevich@gmail.com)
