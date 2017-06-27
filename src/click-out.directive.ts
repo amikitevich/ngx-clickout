@@ -97,8 +97,8 @@ export class ClickOutDirective implements OnChanges, OnInit, OnDestroy {
   getEscEvent(): Observable<any> {
 
     return Observable.fromEvent(this._element.nativeElement, 'keydown')
-      .do((keyEvent: KeyboardEvent) => keyEvent.preventDefault())
       .filter(this.filterAndSetFocusToParent.bind(this))
+      .do((keyEvent: KeyboardEvent) => keyEvent.preventDefault())
       .takeUntil(this.getInActiveState());
   }
 
