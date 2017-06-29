@@ -2,9 +2,8 @@ import {
   Directive,
   Input,
   Output,
-  OnInit,
   ElementRef,
-  EventEmitter, HostListener, HostBinding
+  EventEmitter, HostListener, HostBinding, AfterViewInit
 } from '@angular/core';
 
 const getEventPath = (event: Event): HTMLElement[] => {
@@ -25,7 +24,7 @@ const getEventPath = (event: Event): HTMLElement[] => {
 @Directive({
   selector: '[clickOut]'
 })
-export class ClickOutDirective implements OnInit {
+export class ClickOutDirective implements AfterViewInit {
 
   @Input() clickOut: boolean;
 
@@ -54,7 +53,7 @@ export class ClickOutDirective implements OnInit {
 
   constructor(private _element: ElementRef) { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.setFocus();
   }
 
