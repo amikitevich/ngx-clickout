@@ -93,9 +93,13 @@ $ npm run lint
 <a name="0.2.1"></a>
 # [0.2.1] (2017-06-27)
 
-
 ### Bug Fixes
 * fix exit full screen in safari by esc
+
+<a name="1.0.0"></a>
+# [1.0.0] (2017-06-27)
+* remove rxjs, add angular event listeners.
+* breaking change remove clickOutFilter input property
 
 ## License
 
