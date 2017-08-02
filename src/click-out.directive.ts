@@ -28,14 +28,14 @@ export class ClickOutDirective implements AfterViewInit {
 
   @Input() clickOut: boolean;
 
-  @Output() clickOutEvent: EventEmitter<any> = new EventEmitter<any>();
+  @Output() clickOutEvent: EventEmitter<MouseEvent | KeyboardEvent> = new EventEmitter<MouseEvent | KeyboardEvent>();
 
   @HostBinding('attr.tabindex') tabindex = -1;
 
   @HostListener('document:mousedown', ['$event']) onMouseDown(event: MouseEvent) {
 
     if (this.clickOut && !getEventPath(event).includes(this._element.nativeElement)) {
-      this.clickOutEvent.emit();
+      this.clickOutEvent.emit(event);
     }
   }
 
@@ -45,7 +45,7 @@ export class ClickOutDirective implements AfterViewInit {
     }
 
     if (this._element.nativeElement.contains(event.target)) {
-      this.clickOutEvent.emit();
+      this.clickOutEvent.emit(event);
     } else {
       this.setFocus();
     }

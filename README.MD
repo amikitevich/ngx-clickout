@@ -88,7 +88,7 @@ To lint all `*.ts` files:
 $ npm run lint
 ```
 
-# CHANGELOG 
+# CHANGELOG
 
 <a name="0.2.1"></a>
 # [0.2.1] (2017-06-27)
@@ -100,6 +100,10 @@ $ npm run lint
 # [1.0.0] (2017-06-27)
 * remove rxjs, add angular event listeners.
 * breaking change remove clickOutFilter input property
+
+<a name="1.0.2"></a>
+# [1.0.0] (2017-06-27)
+* emit mouse or keyboard event in clieckOutEvent
 
 ## License
 
